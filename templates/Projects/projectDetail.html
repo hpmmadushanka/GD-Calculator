@@ -40,47 +40,65 @@ GD. Calc.
 
                         </span>
 
-                        <div class="wrap-input100 validate-input bg1">
+                        <legend><h4><b>Project Info.</b></h4></legend>
+
+                        <div class="wrap-input100 validate-input bg0">
+                            <legend>
                             <span class="label-input100">Project ID</span>
-                            <input class="input100" type="text" placeholder={{project.id}} disabled >
+                            </legend>
+                            <input class="input100" type="text" disabled>{{project.id}}
                         </div>
 
-                        <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                        <div class="wrap-input100 validate-input bg0" >
+                            <legend>
                             <span class="label-input100">K value</span>
-                            <input class="input100" type="text" placeholder={{result.k}} disabled>
+                            </legend>
+                            <input class="input100" type="text" disabled>{{result.k}}
                         </div>
 
-                        <div class="wrap-input100 validate-input bg1" >
+                        <div class="wrap-input100 validate-input bg0" >
+                            <legend>
                             <span class="label-input100">Status</span>
-                            <input class="input100" type="text" placeholder={{result.status}} disabled>
+                            </legend>
+                            <input class="input100" type="text" disabled >{{result.status}}
                         </div>
 
-                        <div class="wrap-input100 validate-input bg0 rs1-alert-validate">
+                        <div class="wrap-input100 validate-input bg0" >
+                            <legend>
                             <span class="label-input100">Description</span>
-                            <textarea class="input100" disabled placeholder={{project.projectDescription}}></textarea>
+                            </legend>
+                            <textarea class="input100" disabled>{{project.projectDescription}}</textarea>
                         </div>
 
 
-                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" >
+
+
+                        <div class="wrap-input100 validate-input bg0 rs1-wrap-input100" >
+                            <legend>
                             <span class="label-input100">File name</span>
+                            </legend>
                             {% for sequence in sequenceList %}
 
-                                <input class="input100" type="text" placeholder={{sequence.filename}} disabled>
+                                <input class="input100" type="text" disabled>{{sequence.filename}}
 
                             {% endfor %}
 
                         </div>
 
-                        <div class="wrap-input100 bg1 rs1-wrap-input100">
+                        <div class="wrap-input100 bg0 rs1-wrap-input100">
+                            <legend>
                             <span class="label-input100">Sequence ID</span>
+                            </legend>
                             {% for sequence in sequenceList %}
 
-                            <input class="input100" type="text" placeholder={{sequence.id}} disabled>
+                            <input class="input100" type="text" disabled>{{sequence.id}}
                             {% endfor %}
                         </div>
 
-                        <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+                        <div class="wrap-input100 validate-input bg0" >
+                            <legend>
                             <span class="label-input100">Distance Matrix</span>
+                            </legend>
                             <textarea class="input100" disabled >{{distance.ddd}}</textarea>
                         </div>
 
@@ -94,7 +112,8 @@ GD. Calc.
                     <div class="container-contact100">
                     <div class="wrap-contact100">
 
-                    <h4><b>Get Sequences & Kmer Frequencies</b></h4>
+
+                    <legend><h4><b>Get Sequences & Kmer Frequencies</b></h4></legend>
                     {% for sequence in sequenceList %}
                         {{sequence.filename}}
                         <a href="/sequences/{{sequence.id}}">
@@ -109,10 +128,20 @@ GD. Calc.
                     </div>
                         <div class="wrap-contact100">
 
-                    <h4><b>Get Distance Matrix</b></h4>
+                    <legend><h4><b>Get Distance Matrix</b></h4></legend>
                         <a href="/matrix/{{result.id}}">
                             <button class='btn btn-default input100'> get distance matrix </button>
                         </a>
+                        </div>
+                        <div class="wrap-contact100">
+
+                    <legend><h4><b>Get Phylogentic Tree</b></h4></legend>
+                        <a href="/phylogentic_tree/{{result.id}}">
+                            <button class='btn btn-default input100'> get phylogentic tree </button>
+                        </a>
+                        </div>
+                    </div>
+
                         </div>
                     </div>
 

@@ -1,5 +1,22 @@
 <h1>Genetic Distance Calculator - improved version</h1>
-<p class="lead">
+<h3>Introducing frequencies to k-mer forests to enhance sensitivity in genetic distance calculation</h3>
+<p>
+    1.      Enhance the information on k-mer forests with the number of occurrences in root to leaf pathways(frequency of k-mers) - 
+Currently, we are considering only the presence of kmers. In addition to that, we should extract the number of occurrences in each kmer.</p>
+<p>
+    2. Introduce a method that uses the impact of the frequencies in forest comparison to improve the sensitivity of genetic distance calculation.
+Currently we consider presence of common and uncommon kmers only. With this approach when common parts repeating or uncommon parts repeating give the same kmer distance. But we need higher similarity when common parts repeating and lesser similarity when uncommon parts are repeating. We can do this by considering frequencies that kmers appear in the sequences.[we have an idea to implement this/ can let students to come up their own way to implement this as well]
 
+</p>
+<p>
+     3. Improve the efficiency of tree pruning methods by keeping child count[more accurately child frequency sum] at internal node.]
+Currently we are using a recursive algorithm to get a child count each time the prunning happens. Instead of that, if we can have child frequency sum in internal nodes for high efficient comparison.
+
+</p>
+<p>
+   4. This has tools,
+    • That can give improved k-mer distance given two fasta files.[user might be able to pick k value]
+    • Given a set of sequences, calculate pairwise distances and produce distance matrix and visualize it.
+    • Construct phylogenetic tree and visualize it.
 
 </p>

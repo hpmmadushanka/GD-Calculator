@@ -157,8 +157,14 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 
-.bg0 {background-color: #fff;}
-.bg1 {background-color: #f7f7f7;}
+.bg0 {background-color: #add8e6;}
+.bg1 {
+    background-color: #add8e6;
+
+
+}
+
+.red{background: #FF0000}
 
 
 /*//////////////////////////////////////////////////////////////////

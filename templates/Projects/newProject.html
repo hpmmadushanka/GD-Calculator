@@ -9,7 +9,7 @@ GD. Calc.
 {% block styles %}
 {{super()}}
 <link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
-<link rel="stylesheet" href="{{url_for('.static', filename='newproject.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='projectDetails.css')}}">
 <script src="{{url_for('static', filename='rr.js')}}"></script>
 {% endblock %}
 
@@ -27,37 +27,55 @@ GD. Calc.
           </ul>
 
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h2 class="sub-header">Create New Project</h2>
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-                <h6 style="color:red">{{ msg }}</h6>
 
-            <div class="form-style-5">
-                <form class="form-new-project" method="POST" action="/new_project" enctype="multipart/form-data">
-                <fieldset>
+            <div class="container-contact100">
+                <div class="wrap-contact100">
 
-                <legend><span class="number"></span> Project Info</legend>
-                <label for="name" class="required">Project name:</label><br>
-                <input type="text" name="name" id="name" required><br>
+                    <form class="contact100-form validate-form" method="POST" action="/new_project" enctype="multipart/form-data">
+                        <span class="contact100-form-title"><b>
+                            New Project
 
-                <label for="des">Project Description:</label><br>
-                    <textarea type="textArea" name="description" id="des"></textarea><br>
+                        </b>
 
-                </fieldset>
-                 <fieldset>
+                        </span>
+                        <h6 style="color:red">{{ msg }}</h6>
 
-                <legend><span class="number required"></span> K value </legend>
-                 <input type="number" name="k" id="k" required><br>
-                </fieldset>
-                <fieldset>
 
-                <legend><span class="number required"></span> Upload Only .txt Files</legend>
-                 <input type="file" multiple="" name="file[]" class="span3" required/>
-                </fieldset>
-                 <button class="btn btn-lg btn-primary btn-block" type="submit">Create Project</button>
-                </form>
+
+                        <div class="wrap-input100 validate-input bg0">
+                            <legend><label for="name" class="required">Project name</label> </legend>
+                            <input type="text" class="input100" name="name" id="name" required>
+                        </div>
+
+                        <div class="wrap-input100 validate-input bg0" >
+                            <legend><label for="des">Project Description</label></legend>
+                            <textarea type="textArea" name="description" class="input100"  id="des"></textarea>
+                        </div>
+
+                        <div class="wrap-input100 validate-input bg0" >
+                            <legend><span class="number required"></span> K value </legend>
+                            <input type="number" name="k" id="k" class="input100"  required>
+                        </div>
+
+                        <div class="wrap-input100 validate-input bg0 rs1-alert-validate">
+                            <legend><span class="number required"></span> Upload Only .txt Files</legend>
+                            <input type="file" multiple="" name="file[]" class="span3 input100" required/>
+                        </div>
+
+
+
+                         <button class="btn btn-lg btn-primary btn-block" type="submit">Create Project</button>
+
+
+                    </form>
+                </div>
+
+
             </div>
+
 
 
         </div>
