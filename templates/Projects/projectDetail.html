@@ -1,0 +1,126 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}
+GD. Calc.
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='projectDetails.css')}}">
+<script src="{{url_for('static', filename='projectDetails.js')}}"></script>
+{% endblock %}
+
+{% block content %}
+    {% include "nav.html" %}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+              <li><a href="/dashboard">Overview</a></li>
+              <li><a href="/new_project">Create new Project</a></li>
+              <li class="active"><a href="/">Projects <span class="sr-only">(current)</span></a></li>
+              <li><a href="/history">History</a></li>
+          </ul>
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+            <div class="container-contact100">
+                <div class="wrap-contact100">
+                    <form class="contact100-form validate-form">
+                        <span class="contact100-form-title"><b>
+                            {{project.projectName}}
+
+                        </b>
+
+                        </span>
+
+                        <div class="wrap-input100 validate-input bg1">
+                            <span class="label-input100">Project ID</span>
+                            <input class="input100" type="text" placeholder={{project.id}} disabled >
+                        </div>
+
+                        <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                            <span class="label-input100">K value</span>
+                            <input class="input100" type="text" placeholder={{result.k}} disabled>
+                        </div>
+
+                        <div class="wrap-input100 validate-input bg1" >
+                            <span class="label-input100">Status</span>
+                            <input class="input100" type="text" placeholder={{result.status}} disabled>
+                        </div>
+
+                        <div class="wrap-input100 validate-input bg0 rs1-alert-validate">
+                            <span class="label-input100">Description</span>
+                            <textarea class="input100" disabled placeholder={{project.projectDescription}}></textarea>
+                        </div>
+
+
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" >
+                            <span class="label-input100">File name</span>
+                            {% for sequence in sequenceList %}
+
+                                <input class="input100" type="text" placeholder={{sequence.filename}} disabled>
+
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="wrap-input100 bg1 rs1-wrap-input100">
+                            <span class="label-input100">Sequence ID</span>
+                            {% for sequence in sequenceList %}
+
+                            <input class="input100" type="text" placeholder={{sequence.id}} disabled>
+                            {% endfor %}
+                        </div>
+
+                        <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+                            <span class="label-input100">Distance Matrix</span>
+                            <textarea class="input100" disabled >{{distance.ddd}}</textarea>
+                        </div>
+
+
+
+
+                    </form>
+
+
+
+                    <div class="container-contact100">
+                    <div class="wrap-contact100">
+
+                    <h4><b>Get Sequences & Kmer Frequencies</b></h4>
+                    {% for sequence in sequenceList %}
+                        {{sequence.filename}}
+                        <a href="/sequences/{{sequence.id}}">
+
+                            <button class='btn btn-default input100'> Sequence </button>
+                        </a>
+                        <a href="/kmers/{{result.id}}/{{sequence.id}}">
+
+                            <button class='btn btn-default input100'> K-mer Frequencies </button>
+                        </a>
+                    {% endfor %}
+                    </div>
+                        <div class="wrap-contact100">
+
+                    <h4><b>Get Distance Matrix</b></h4>
+                        <a href="/matrix/{{result.id}}">
+                            <button class='btn btn-default input100'> get distance matrix </button>
+                        </a>
+                        </div>
+                    </div>
+
+            </div>
+
+
+
+        </div>
+      </div>
+    </div>
+{% endblock %}

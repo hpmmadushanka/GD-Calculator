@@ -1,0 +1,41 @@
+/*Fonts*/
+@font-face {
+  font-family: 'black';
+  src: url('/assets/font/montserrat/Montserrat-Black.ttf') fromat('truetype'),
+  src: url('../font/montserrat/Montserrat-Black.woff') format('woff');
+}
+@font-face {
+  font-family: 'bold';
+  src: url('/assets/font/montserrat/Montserrat-Bold.ttf') format('truetype'),
+  src: url('../font/montserrat/Montserrat-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'extrabold';
+  src: url('/assets/font/montserrat/Montserrat-ExtraBold.ttf') format('truetype'),
+  src: url('../font/montserrat/Montserrat-ExtraBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'hairline';
+  src: url('/assets/font/montserrat/Montserrat-Hairline.ttf') format('truetype'),
+  src: url('../font/montserrat/Montserrat-Hairline.woff') format('woff');
+}
+@font-face {
+  font-family: 'light';
+  src: url('/assets/font/montserrat/Montserrat-Light.ttf') format('truetype'),
+  src: url('../font/montserrat/Montserrat-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'regular';
+  src: url('/assets/font/montserrat/Montserrat-Regular.ttf') format('truetype'),
+  src: url('../font/montserrat/Montserrat-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'semibold';
+  src: url('/assets/font/montserrat/Montserrat-SemiBold.ttf') format('truetype'),
+  src: url('../font/montserrat/Montserrat-SemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'ultralight';
+  src: url('/assets/font/montserrat/Montserrat-UltraLight.ttf') format('truetype'),
+  src: url('../font/montserrat/Montserrat-UltraLight.woff') format('woff');
+}
